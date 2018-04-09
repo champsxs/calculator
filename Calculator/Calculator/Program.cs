@@ -13,13 +13,23 @@ namespace TestConsoleApp1
             //Addition 
             double numone, numtwo = 0;
             double int_number = 0;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("Welcome to Calculator | type");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(" esc");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(" and enter to exit the calculator");
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("You can use operators + , - , / , *  Ex:- 2+5-2*2/5");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Enter numbers to calculate followed by enter");
             string number_build = "";
             double short_sum = 0;
             while (true)
             {
                 string typed_string = Console.ReadLine();
+                if ("esc" == typed_string.ToLower())
+                    Environment.Exit(0);
                 var input_array = typed_string.ToList();
                 //string[] operators =  {"+","-","/","*"};
                 var operators = new List<string>();
@@ -76,19 +86,20 @@ namespace TestConsoleApp1
                     for (int j = 0; j < operators.Count; j++)
                     {
 
-                        if ("/" == operators[0])
+                        if ("/" == operators[0] && "0" == typed_numbers[0])
                         {
-                            if ("0" == typed_numbers[0])
-                            {
-                                Console.WriteLine("Error! Result is undefined");
-                            }
-                            else if ("0" == typed_numbers[1])
-                            {
-                            
-                                Console.WriteLine("Error! Cannot divide by zero");
-                             
-                            }
+                            //if ("0" == typed_numbers[0])
+                            //{
+                            Console.WriteLine("Error! Result is undefined");
+                            //}
                         }
+                        else if ("/" == operators[0] && "0" == typed_numbers[1])
+                        {
+
+                            Console.WriteLine("Error! Cannot divide by zero");
+
+                        }
+
                         else if (operators.Count > 0)
                         {
                             if (0 == j)
@@ -148,8 +159,11 @@ namespace TestConsoleApp1
                     }
                     return sum;
                 }
-
-                Console.WriteLine("Total is :" + final);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Total is :");
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine(final);
+                Console.ForegroundColor = ConsoleColor.White;
             }
 
             double addition(double the_number, double sumof)
@@ -172,7 +186,7 @@ namespace TestConsoleApp1
 
             double divition(double the_number, double sumof)
             {
-                sumof = sumof / the_number;
+                sumof = the_number/sumof;
                 return sumof;
             }
 

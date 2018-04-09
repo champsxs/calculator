@@ -10,7 +10,7 @@ namespace TestConsoleApp1
     {
         static void Main(string[] args)
         {
-            //Addition 
+            //Addition
             double numone, numtwo = 0;
             double int_number = 0;
             Console.ForegroundColor = ConsoleColor.Red;
@@ -23,8 +23,8 @@ namespace TestConsoleApp1
             Console.WriteLine("You can use operators + , - , / , *  Ex:- 2+5-2*2/5");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Enter numbers to calculate followed by enter");
-            string number_build = "";
-            double short_sum = 0;
+            //string number_build = "";
+            //double short_sum = 0;
             while (true)
             {
                 string typed_string = Console.ReadLine();

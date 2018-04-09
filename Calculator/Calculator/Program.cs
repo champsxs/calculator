@@ -133,24 +133,48 @@ namespace TestConsoleApp1
                 {
                     if ("+" == opt)
                     {
-                        sum = sum + number;
+                        sum = addition(number, sum);
                     }
                     else if ("-" == opt)
                     {
-                        sum = sum - number;
+                        sum = subtraction(number,sum);
                     }
                     else if ("/" == opt)
                     {
-                        sum = sum / number;
+                        sum = divition(number,sum);
                     }
                     else if ("*" == opt)
                     {
-                        sum = sum * number;
+                        sum = multiplication(number,sum);
                     }
                     return sum;
                 }
 
                 Console.WriteLine("Total is :" + final);
+            }
+
+            double addition(double the_number, double sumof)
+            {
+                sumof = sumof + the_number;
+                return sumof;
+            }
+
+            double subtraction(double the_number, double sumof)
+            {
+                sumof = sumof - the_number;
+                return sumof;
+            }
+
+            double multiplication(double the_number, double sumof)
+            {
+                sumof = sumof * the_number;
+                return sumof;
+            }
+
+            double divition(double the_number, double sumof)
+            {
+                sumof = sumof / the_number;
+                return sumof;
             }
 
             double convert_string_numbers(string num_str)

@@ -82,12 +82,11 @@ namespace TestConsoleApp1
                             {
                                 Console.WriteLine("Error! Result is undefined");
                             }
-                        }
-                        else if ("/" == operators[0])
-                        {
-                            if ("0" == typed_numbers[1])
+                            else if ("0" == typed_numbers[1])
                             {
+                            
                                 Console.WriteLine("Error! Cannot divide by zero");
+                             
                             }
                         }
                         else if (operators.Count > 0)
